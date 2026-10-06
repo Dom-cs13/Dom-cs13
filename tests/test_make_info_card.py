@@ -3,15 +3,14 @@ from scripts.make_info_card import generate_info_card_svg
 
 def test_generate_info_card_svg():
     info = {
-        "user": "dom@github",
-        "name": "Dominique Contreras",
-        "role": "Systems and Software Engineer",
-        "languages": "C# · Kotlin · C/C++ · Python",
-        "backend": ".NET Core · YARP",
+        "user": "dom@arch",
+        "host": "Dominique Contreras",
+        "os": "Arch Linux x86_64",
+        "gamedev": "Unity · Godot (C#, GDScript)",
     }
     svg = generate_info_card_svg(info)
     assert "<svg" in svg
     assert "</svg>" in svg
     assert "Dominique Contreras" in svg
-    assert "Systems and Software Engineer" in svg
-    assert ".NET Core · YARP" in svg
+    assert "Arch Linux x86_64" in svg
+    assert "Unity · Godot (C#, GDScript)" in svg

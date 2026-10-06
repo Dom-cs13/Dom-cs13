@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate a neofetch-style terminal info card as an SVG.
-Features staggered line fade/slide animations, color key-values, and terminal blocks.
+Generate a neofetch-style terminal info card as an SVG featuring Arch Linux ASCII art.
+Features staggered line fade/slide animations, color key-values, and terminal palette.
 """
 from __future__ import annotations
 
@@ -21,6 +21,7 @@ BG2 = "#111722"
 FRAME = "#30363d"
 MUTED = "#7d8590"
 TEXT = "#e6edf3"
+ARCH_BLUE = "#1793d1"
 CYAN = "#38bdf8"
 GREEN = "#34d399"
 YELLOW = "#fbbf24"
@@ -41,34 +42,34 @@ PALETTE_BRIGHT = [
 
 def generate_info_card_svg(info: Dict[str, str], static: bool = False) -> str:
     lines: List[Tuple[str, str, str]] = [
-        ("user", info.get("user", "dom@github"), GREEN),
-        ("name", info.get("name", "Dominique Contreras"), TEXT),
-        ("role", info.get("role", "Systems & Software Engineer"), YELLOW),
-        ("languages", info.get("languages", "C# · Kotlin · C/C++ · Python · SQL · Assembly"), CYAN),
-        ("backend", info.get("backend", ".NET Core · YARP · Microservices · PostgreSQL"), PURPLE),
-        ("mobile", info.get("mobile", "Android Kotlin · MVVM · Room · Offline-First"), GREEN),
-        ("compilers", info.get("compilers", "DSLs · Lexers · ASTs · Runtimes"), YELLOW),
-        ("embedded", info.get("embedded", "PIC16F · ESP32-C3 · XC8 · UART/SPI/I2C"), RED),
-        ("graphics", info.get("graphics", "Three.js · WebGL · GSAP · 3D Procedural"), BLUE),
-        ("infra", info.get("infra", "Arch Linux · Docker · KVM/QEMU · Bash"), MUTED),
+        ("user", info.get("user", "dom@arch"), GREEN),
+        ("host", info.get("host", "Dominique Contreras"), TEXT),
+        ("os", info.get("os", "Arch Linux x86_64"), ARCH_BLUE),
+        ("kernel", info.get("kernel", "Linux Zen"), MUTED),
+        ("role", info.get("role", "Systems, Backend & Game Dev"), YELLOW),
+        ("stack", info.get("stack", ".NET · C# · Kotlin · C/C++ · Python"), CYAN),
+        ("backend", info.get("backend", "YARP · Microservices · PostgreSQL"), PURPLE),
+        ("gamedev", info.get("gamedev", "Unity · Godot (C#, GDScript)"), GREEN),
+        ("mobile", info.get("mobile", "Android Offline-First (Room, MVVM)"), BLUE),
+        ("low-level", info.get("low-level", "DSLs · Compilers · Embedded (PIC/ESP32)"), RED),
+        ("shell", info.get("shell", "zsh / bash on Linux"), MUTED),
     ]
 
-    ascii_logo = [
-        r"      ___           ___     ",
-        r"     /\  \         /\  \    ",
-        r"    /::\  \       /::\  \   ",
-        r"   /:/\:\  \     /:/\:\  \  ",
-        r"  /:/  \:\__\   /:/  \:\__\ ",
-        r" /:/__/ \:|__| /:/__/ \:|__|",
-        r" \:\  \ /:/  / \:\  \ /:/  /",
-        r"  \:\  /:/  /   \:\  /:/  / ",
-        r"   \:\/:/  /     \:\/:/  /  ",
-        r"    \::/__/       \::/__/   ",
-        r"     ~~            ~~       ",
+    arch_logo = [
+        r"              /\              ",
+        r"             /  \             ",
+        r"            /\   \            ",
+        r"           /      \           ",
+        r"          /   /\   \          ",
+        r"         /   /  \   \         ",
+        r"        /   / /\ \   \        ",
+        r"       /   / /  \ \   \       ",
+        r"      /___/ /    \ \___\      ",
+        r"      \____/      \____/      ",
     ]
 
     slide_dur = 0.45
-    stagger = 0.12
+    stagger = 0.10
 
     css = f"""
     .f {{ opacity: 0; animation: fadeSlide {slide_dur}s cubic-bezier(0.16, 1, 0.3, 1) both; }}
@@ -99,66 +100,61 @@ def generate_info_card_svg(info: Dict[str, str], static: bool = False) -> str:
 
     parts.append(
         f'<text x="{W/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
-        f'text-anchor="middle">dom@github: ~$ neofetch</text>'
+        f'text-anchor="middle">dom@arch: ~$ neofetch</text>'
     )
 
-    # Content section
-    content_top = TITLEBAR_H + 36
+    content_top = TITLEBAR_H + 34
 
-    # Terminal prompt header
     delay = 0.05
     static_attr = "" if not static else ' style="opacity: 1;"'
     dyn_attr = f' class="f" style="animation-delay: {delay:.2f}s"' if not static else static_attr
     parts.append(f'<g{dyn_attr}>')
     parts.append(
         f'<text x="{PAD}" y="{content_top}" font-size="15" fill="{GREEN}">'
-        f'dom@github<tspan fill="{MUTED}">:~$</tspan> <tspan fill="{TEXT}">neofetch --stdout</tspan></text>'
+        f'dom@arch<tspan fill="{MUTED}">:~$</tspan> <tspan fill="{TEXT}">neofetch --stdout</tspan></text>'
     )
     parts.append('</g>')
 
-    # Separator banner line
-    banner_y = content_top + 26
+    banner_y = content_top + 24
     parts.append(
         f'<line x1="{PAD}" y1="{banner_y}" x2="{W-PAD}" y2="{banner_y}" stroke="{FRAME}" stroke-dasharray="4,4"/>'
     )
 
-    # Left column: ASCII Logo
-    logo_top = banner_y + 36
+    # Left column: Arch Linux ASCII Logo
+    logo_top = banner_y + 44
     logo_x = PAD + 10
     logo_line_h = 24
-    for idx, line in enumerate(ascii_logo):
-        delay = 0.15 + idx * 0.04
+    for idx, line in enumerate(arch_logo):
+        delay = 0.12 + idx * 0.03
         dyn_attr = f' class="f" style="animation-delay: {delay:.2f}s"' if not static else static_attr
         parts.append(f'<g{dyn_attr}>')
         safe_l = html.escape(line)
         parts.append(
-            f'<text x="{logo_x}" y="{logo_top + idx * logo_line_h}" fill="{CYAN}" font-size="14" '
+            f'<text x="{logo_x}" y="{logo_top + idx * logo_line_h}" fill="{ARCH_BLUE}" font-size="14" '
             f'font-weight="bold" xml:space="preserve">{safe_l}</text>'
         )
         parts.append('</g>')
 
-    # Right column: Key / Value specs
-    specs_x = PAD + 250
-    specs_top = banner_y + 40
-    specs_step = 36
+    # Right column: Specs
+    specs_x = PAD + 270
+    specs_top = banner_y + 36
+    specs_step = 34
 
     for idx, (key, val, color) in enumerate(lines):
-        delay = 0.25 + idx * stagger
+        delay = 0.15 + idx * stagger
         dyn_attr = f' class="f" style="animation-delay: {delay:.2f}s"' if not static else static_attr
         y = specs_top + idx * specs_step
         parts.append(f'<g{dyn_attr}>')
-        # Key in Cyan/Yellow, Value in styled color
         parts.append(
-            f'<text x="{specs_x}" y="{y}" font-size="15" fill="{MUTED}" font-weight="600">'
+            f'<text x="{specs_x}" y="{y}" font-size="14" fill="{MUTED}" font-weight="600">'
             f'{key.ljust(10)} <tspan fill="{FRAME}">│</tspan> '
             f'<tspan fill="{color}" font-weight="500">{html.escape(val)}</tspan></text>'
         )
         parts.append('</g>')
 
-    # Bottom Terminal Color Palette Blocks (Neofetch signature)
-    palette_top = specs_top + len(lines) * specs_step + 40
+    palette_top = specs_top + len(lines) * specs_step + 36
     parts.append(
-        f'<line x1="{PAD}" y1="{palette_top - 18}" x2="{W-PAD}" y2="{palette_top - 18}" stroke="{FRAME}"/>'
+        f'<line x1="{PAD}" y1="{palette_top - 16}" x2="{W-PAD}" y2="{palette_top - 16}" stroke="{FRAME}"/>'
     )
 
     block_w = 40
@@ -166,8 +162,7 @@ def generate_info_card_svg(info: Dict[str, str], static: bool = False) -> str:
     block_gap = 10
     start_x = (W - (len(PALETTE_COLORS) * (block_w + block_gap))) / 2
 
-    # Normal Palette Row
-    pal_delay = 0.25 + len(lines) * stagger + 0.1
+    pal_delay = 0.15 + len(lines) * stagger + 0.08
     dyn_attr = f' class="f" style="animation-delay: {pal_delay:.2f}s"' if not static else static_attr
     parts.append(f'<g{dyn_attr}>')
     for i, col in enumerate(PALETTE_COLORS):
@@ -175,8 +170,7 @@ def generate_info_card_svg(info: Dict[str, str], static: bool = False) -> str:
         parts.append(f'<rect x="{bx}" y="{palette_top}" width="{block_w}" height="{block_h}" rx="4" fill="{col}"/>')
     parts.append('</g>')
 
-    # Bright Palette Row
-    pal_bright_delay = pal_delay + 0.1
+    pal_bright_delay = pal_delay + 0.08
     dyn_attr = f' class="f" style="animation-delay: {pal_bright_delay:.2f}s"' if not static else static_attr
     parts.append(f'<g{dyn_attr}>')
     for i, col in enumerate(PALETTE_BRIGHT):
@@ -184,13 +178,12 @@ def generate_info_card_svg(info: Dict[str, str], static: bool = False) -> str:
         parts.append(f'<rect x="{bx}" y="{palette_top + block_h + 6}" width="{block_w}" height="{block_h}" rx="4" fill="{col}"/>')
     parts.append('</g>')
 
-    # Bottom status quote
-    quote_y = palette_top + block_h * 2 + 54
-    dyn_attr = f' class="f" style="animation-delay: {pal_bright_delay + 0.1:.2f}s"' if not static else static_attr
+    quote_y = palette_top + block_h * 2 + 50
+    dyn_attr = f' class="f" style="animation-delay: {pal_bright_delay + 0.08:.2f}s"' if not static else static_attr
     parts.append(f'<g{dyn_attr}>')
     parts.append(
         f'<text x="{W/2}" y="{quote_y}" fill="{MUTED}" font-size="13" font-style="italic" text-anchor="middle">'
-        f'"Code with passion. Build worlds with imagination."'
+        f'"Engineered for performance. Built on Linux."'
         f'</text>'
     )
     parts.append('</g>')
@@ -204,16 +197,17 @@ def main() -> None:
     static = bool(os.environ.get("STATIC"))
 
     info = {
-        "user": "dom@github",
-        "name": "Dominique Contreras",
-        "role": "Developer & Game Creator",
-        "focus": "Python · JavaScript · HTML",
-        "engines": "Unity · Unreal Engine",
-        "status": "Building games & web systems",
-        "repos": "18 Public Repositories",
-        "github": "github.com/Dom-cs13",
-        "interests": "Game Dev · Clean Code · SOLID",
-        "terminal": "zsh / bash on Linux",
+        "user": "dom@arch",
+        "host": "Dominique Contreras",
+        "os": "Arch Linux x86_64",
+        "kernel": "Linux Zen",
+        "role": "Systems, Backend & Game Dev",
+        "stack": ".NET · C# · Kotlin · C/C++ · Python",
+        "backend": "YARP · Microservices · PostgreSQL",
+        "gamedev": "Unity · Godot (C#, GDScript)",
+        "mobile": "Android Offline-First (Room, MVVM)",
+        "low-level": "DSLs · Compilers · Embedded (PIC/ESP32)",
+        "shell": "zsh / bash on Linux",
     }
 
     svg = generate_info_card_svg(info, static=static)

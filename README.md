@@ -1,12 +1,12 @@
 <div align="center">
 
-<h3><code>dom@github ~ $ ./contributions.sh</code></h3>
+<h3><code>dom@arch ~ $ ./contributions.sh</code></h3>
 
 <img src="./contrib-heatmap.svg" width="860" alt="Dominique's GitHub contribution graph" />
 
 <br><br>
 
-<h3><code>dom@github ~ $ whoami</code></h3>
+<h3><code>dom@arch ~ $ whoami</code></h3>
 
 <table>
   <tr>
@@ -18,55 +18,55 @@
 <br>
 
 # Dominique Contreras
-### Systems and Software Engineer | Backend (.NET / YARP) · Compilers & DSLs · Offline-First Mobile · Embedded Systems
+### Systems, Backend & Game Dev | Arch Linux · .NET / YARP · Unity & Godot · Android Offline-First
 
 <p>
   <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/GitHub-Dom--cs13-181717?style=flat-square&logo=github&logoColor=white" /></a>
-  <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/Status-Active_Developer-0ea5e9?style=flat-square" /></a>
-  <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/Architecture-SOLID_%26_Clean_Code-22c55e?style=flat-square" /></a>
+  <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/OS-Arch_Linux-1793d1?style=flat-square&logo=archlinux&logoColor=white" /></a>
+  <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/GameDev-Unity_%7C_Godot-22c55e?style=flat-square" /></a>
+  <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/Backend-.NET_%7C_YARP-9333ea?style=flat-square" /></a>
 </p>
 
 </div>
 
 ---
 
-### Engineering Profile
-Estudiante de Ingeniería en Sistemas y Ciencias de la Computación enfocado en arquitectura de software, desarrollo backend de alto rendimiento, sistemas embebidos y aplicaciones móviles offline-first. Especializado en diseño de gateways con .NET y YARP, modelado relacional riguroso en PostgreSQL (PL/pgSQL), desarrollo de analizadores léxicos/sintácticos para DSLs y programación de microcontroladores en C y Assembly.
+### Profile Overview
+Ingeniero de software y sistemas orientado a desarrollo en entornos Linux (Arch Linux / Zen Kernel), arquitectura backend de alto rendimiento, desarrollo de videojuegos (Unity y Godot) y sistemas embebidos de bajo nivel.
+
+- **Linux & Sistemas:** Entorno nativo de trabajo y despliegue en Arch Linux, virtualización KVM/QEMU, scripting avanzado en Bash/Fish y compiladores/DSLs desde cero.
+- **Backend & Datos:** Gateways con .NET/YARP, microservicios, APIs RESTful y modelado relacional en PostgreSQL (PL/pgSQL).
+- **Game Development:** Desarrollo en Unity y Godot (C# / GDScript), además de gráficos interactivos 3D en la web con WebGL y Three.js.
+- **Mobile & Embebidos:** Aplicaciones móviles nativas offline-first con Kotlin y persistencia local (Room), y firmware para microcontroladores (PIC/ESP32) en C y Assembly.
 
 ---
 
 ### Flagship Projects
 
-#### 1. APishop / Telar - API Gateway & Marketplace Platform
-- Arquitectura de red y proxy inverso para plataforma white-label de distribución y monetización de APIs.
-- Enrutamiento dinámico con .NET y YARP, autenticación centralizada, métricas de consumo y persistencia relacional con PostgreSQL.
+#### 1. APishop / Telar - API Gateway & White-Label Marketplace
+- Arquitectura de red y proxy inverso para plataforma de distribución y monetización de APIs.
+- Enrutamiento dinámico con .NET y YARP, autenticación centralizada y persistencia con PostgreSQL.
 - **Stack:** .NET Core, YARP, PostgreSQL, PL/pgSQL, Docker.
 
 #### 2. [ASTRA & BioSphere - Scientific Simulation Engine & WebGL IDE](https://github.com/Dom-cs13/astra-biosphere-webgl)
-- Motor de simulación y lenguaje de dominio específico (DSL) para modelado de habitabilidad planetaria y parámetros astrobiológicos.
-- Analizador léxico y sintáctico desarrollado desde cero en C#, junto con entorno interactivo 3D en WebGL con Three.js y animaciones sincronizadas vía GSAP.
+- Motor de simulación y lenguaje de dominio específico (DSL) para habitabilidad planetaria.
+- Analizador léxico y sintáctico en C#, con entorno interactivo 3D en WebGL utilizando Three.js y animaciones sincronizadas vía GSAP.
 - **Stack:** C#, Compilers (Lexer / AST), Three.js, WebGL, GSAP.
 
-#### 3. [Ovum - Offline-First Poultry Management Platform](https://github.com/Dom-cs13/ovum-mobile)
-- Solución móvil nativa para Android diseñada para operatividad continua en entornos rurales sin conectividad.
+#### 3. [Ovum - Offline-First Mobile Poultry Platform](https://github.com/Dom-cs13/ovum-mobile)
+- Solución móvil nativa para Android diseñada para operatividad en zonas rurales sin conexión.
 - Persistencia local ACID mediante Room Database y sincronización en segundo plano con WorkManager y Firebase.
-- **Stack:** Kotlin, Android SDK, MVVM, Room Database, WorkManager, Firebase.
-
-#### 4. Embedded Control & Hardware Security Systems
-- Sistemas embebidos de control microcontrolado desarrollados en C (MPLAB XC8) y Assembly para arquitecturas PIC (PIC16F887) y ESP32-C3.
-- Detección multi-sensor (PIR, LDR, láser) con acondicionamiento de señal analógica y temporización por hardware.
-- **Stack:** C, Assembly x86 / PIC, ESP32-C3, MPLAB XC8, UART / SPI / I2C.
+- **Stack:** Kotlin, MVVM, Room Database, WorkManager, Firebase.
 
 ---
 
 ### Technical Arsenal
 
-| Dominio | Tecnologías y Herramientas |
+| Dominio | Tecnologías |
 |---|---|
-| Backend & Arquitectura | .NET Core, ASP.NET, YARP (Reverse Proxy / API Gateways), Microservicios, REST APIs, WebSockets |
-| Bases de Datos | PostgreSQL (PL/pgSQL, Triggers, Procedimientos Almacenados, BCNF), MariaDB, MongoDB, Supabase |
-| Lenguajes & Compiladores | C#, Kotlin, C++, C, Python, SQL, x86 Assembly, Diseño de DSLs, Lexers, Árboles Sintácticos (AST) |
-| Desarrollo Móvil | Android Nativo (Kotlin), MVVM, Room Database, WorkManager, Corrutinas, Arquitectura Offline-First |
-| Gráficos Web & Frontend | Three.js, WebGL, GSAP (ScrollTrigger), JavaScript (ES6+), HTML5/CSS3 |
-| Sistemas Embebidos | ESP32-C3, PIC16F887, PIC16F877A (MPLAB XC8), UART, SPI, I2C, Proteus, SimulIDE |
-| Infraestructura & Entorno | Arch Linux, Linux Zen, Bash/Fish, Docker, KVM/QEMU (virt-manager), Git CI/CD |
+| Entorno & Infraestructura | Arch Linux (Linux Zen), Bash/Fish, Docker, KVM/QEMU, Git CI/CD |
+| Backend & Arquitectura | .NET Core, ASP.NET, YARP (Reverse Proxy), Microservicios, REST APIs |
+| Bases de Datos | PostgreSQL (PL/pgSQL, Triggers, Procedimientos Almacenados), MariaDB, Room DB |
+| Game Dev & Gráficos | Unity, Godot (C# / GDScript), Three.js, WebGL, GSAP |
+| Compiladores & Bajo Nivel | Diseño de DSLs, Lexers, ASTs, x86 Assembly, MPLAB XC8 (PIC16F), ESP32-C3 |
+| Desarrollo Móvil | Android Nativo (Kotlin), MVVM, Room Database, WorkManager, Offline-First |
