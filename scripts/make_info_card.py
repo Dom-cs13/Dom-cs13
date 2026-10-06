@@ -44,8 +44,8 @@ def generate_info_card_svg(info: Dict[str, str], static: bool = False) -> str:
     lines: List[Tuple[str, str, str]] = [
         ("user", info.get("user", "dom@arch"), GREEN),
         ("host", info.get("host", "Dominique Contreras"), TEXT),
-        ("os", info.get("os", "Arch Linux x86_64"), ARCH_BLUE),
-        ("kernel", info.get("kernel", "Linux Zen"), MUTED),
+        ("os", info.get("os", "Arch Linux · CachyOS"), ARCH_BLUE),
+        ("kernel", info.get("kernel", "Linux Zen / CachyOS"), MUTED),
         ("role", info.get("role", "Systems, Backend & Game Dev"), YELLOW),
         ("stack", info.get("stack", ".NET · C# · Kotlin · C/C++ · Python"), CYAN),
         ("backend", info.get("backend", "YARP · Microservices · PostgreSQL"), PURPLE),
@@ -199,8 +199,8 @@ def main() -> None:
     info = {
         "user": "dom@arch",
         "host": "Dominique Contreras",
-        "os": "Arch Linux x86_64",
-        "kernel": "Linux Zen",
+        "os": "Arch Linux · CachyOS",
+        "kernel": "Linux Zen / CachyOS",
         "role": "Systems, Backend & Game Dev",
         "stack": ".NET · C# · Kotlin · C/C++ · Python",
         "backend": "YARP · Microservices · PostgreSQL",

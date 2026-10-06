@@ -18,11 +18,11 @@
 <br>
 
 # Dominique Contreras
-### Systems, Backend & Game Dev | Arch Linux · .NET / YARP · Unity & Godot · Android Offline-First
+### Systems, Backend & Game Dev | Arch Linux · CachyOS · .NET / YARP · Unity & Godot · Android Offline-First
 
 <p>
   <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/GitHub-Dom--cs13-181717?style=flat-square&logo=github&logoColor=white" /></a>
-  <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/OS-Arch_Linux-1793d1?style=flat-square&logo=archlinux&logoColor=white" /></a>
+  <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/OS-Arch_Linux_%7C_CachyOS-1793d1?style=flat-square&logo=archlinux&logoColor=white" /></a>
   <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/GameDev-Unity_%7C_Godot-22c55e?style=flat-square" /></a>
   <a href="https://github.com/Dom-cs13"><img src="https://img.shields.io/badge/Backend-.NET_%7C_YARP-9333ea?style=flat-square" /></a>
 </p>
@@ -32,9 +32,9 @@
 ---
 
 ### Profile Overview
-Ingeniero de software y sistemas orientado a desarrollo en entornos Linux (Arch Linux / Zen Kernel), arquitectura backend de alto rendimiento, desarrollo de videojuegos (Unity y Godot) y sistemas embebidos de bajo nivel.
+Ingeniero de software y sistemas orientado a desarrollo en entornos Linux (Arch Linux / CachyOS / Zen Kernel), arquitectura backend de alto rendimiento, desarrollo de videojuegos (Unity y Godot) y sistemas embebidos de bajo nivel.
 
-- **Linux & Sistemas:** Entorno nativo de trabajo y despliegue en Arch Linux, virtualización KVM/QEMU, scripting avanzado en Bash/Fish y compiladores/DSLs desde cero.
+- **Linux & Sistemas:** Entorno nativo de trabajo y despliegue en Arch Linux y CachyOS, virtualización KVM/QEMU, scripting avanzado en Bash/Fish y compiladores/DSLs desde cero.
 - **Backend & Datos:** Gateways con .NET/YARP, microservicios, APIs RESTful y modelado relacional en PostgreSQL (PL/pgSQL).
 - **Game Development:** Desarrollo en Unity y Godot (C# / GDScript), además de gráficos interactivos 3D en la web con WebGL y Three.js.
 - **Mobile & Embebidos:** Aplicaciones móviles nativas offline-first con Kotlin y persistencia local (Room), y firmware para microcontroladores (PIC/ESP32) en C y Assembly.
@@ -64,7 +64,7 @@ Ingeniero de software y sistemas orientado a desarrollo en entornos Linux (Arch 
 
 | Dominio | Tecnologías |
 |---|---|
-| Entorno & Infraestructura | Arch Linux (Linux Zen), Bash/Fish, Docker, KVM/QEMU, Git CI/CD |
+| Entorno & Infraestructura | Arch Linux, CachyOS (Linux Zen), Bash/Fish, Docker, KVM/QEMU, Git CI/CD |
 | Backend & Arquitectura | .NET Core, ASP.NET, YARP (Reverse Proxy), Microservicios, REST APIs |
 | Bases de Datos | PostgreSQL (PL/pgSQL, Triggers, Procedimientos Almacenados), MariaDB, Room DB |
 | Game Dev & Gráficos | Unity, Godot (C# / GDScript), Three.js, WebGL, GSAP |
