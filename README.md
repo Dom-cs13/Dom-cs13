@@ -43,7 +43,7 @@ Ingeniero de software y sistemas orientado a desarrollo en entornos Linux (Arch 
 
 ### Flagship Projects
 
-#### 1. APishop / Telar - API Gateway & White-Label Marketplace
+#### 1. Shapi - API Gateway & White-Label Marketplace
 - Arquitectura de red y proxy inverso para plataforma de distribución y monetización de APIs.
 - Enrutamiento dinámico con .NET y YARP, autenticación centralizada y persistencia con PostgreSQL.
 - **Stack:** .NET Core, YARP, PostgreSQL, PL/pgSQL, Docker.
