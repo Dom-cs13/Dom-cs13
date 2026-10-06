@@ -5,13 +5,13 @@ def test_generate_info_card_svg():
     info = {
         "user": "dom@github",
         "name": "Dominique Contreras",
-        "role": "Aspiring Developer",
-        "stack": "Python, JavaScript, HTML",
-        "engines": "Unity, Unreal Engine",
+        "role": "Systems and Software Engineer",
+        "languages": "C# · Kotlin · C/C++ · Python",
+        "backend": ".NET Core · YARP",
     }
     svg = generate_info_card_svg(info)
     assert "<svg" in svg
     assert "</svg>" in svg
     assert "Dominique Contreras" in svg
-    assert "Python, JavaScript, HTML" in svg
-    assert "Unity, Unreal Engine" in svg
+    assert "Systems and Software Engineer" in svg
+    assert ".NET Core · YARP" in svg

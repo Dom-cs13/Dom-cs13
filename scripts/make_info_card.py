@@ -43,14 +43,14 @@ def generate_info_card_svg(info: Dict[str, str], static: bool = False) -> str:
     lines: List[Tuple[str, str, str]] = [
         ("user", info.get("user", "dom@github"), GREEN),
         ("name", info.get("name", "Dominique Contreras"), TEXT),
-        ("role", info.get("role", "Developer & Game Creator"), YELLOW),
-        ("stack", info.get("stack") or info.get("focus", "Python · JavaScript · HTML"), CYAN),
-        ("engines", info.get("engines", "Unity · Unreal Engine"), PURPLE),
-        ("status", info.get("status", "Building games & web systems"), TEXT),
-        ("repos", info.get("repos", "18 Public Repositories"), BLUE),
-        ("github", info.get("github", "github.com/Dom-cs13"), GREEN),
-        ("interests", info.get("interests", "Game Dev · Clean Architecture · SOLID"), YELLOW),
-        ("terminal", info.get("terminal", "zsh / bash on Linux"), MUTED),
+        ("role", info.get("role", "Systems & Software Engineer"), YELLOW),
+        ("languages", info.get("languages", "C# · Kotlin · C/C++ · Python · SQL · Assembly"), CYAN),
+        ("backend", info.get("backend", ".NET Core · YARP · Microservices · PostgreSQL"), PURPLE),
+        ("mobile", info.get("mobile", "Android Kotlin · MVVM · Room · Offline-First"), GREEN),
+        ("compilers", info.get("compilers", "DSLs · Lexers · ASTs · Runtimes"), YELLOW),
+        ("embedded", info.get("embedded", "PIC16F · ESP32-C3 · XC8 · UART/SPI/I2C"), RED),
+        ("graphics", info.get("graphics", "Three.js · WebGL · GSAP · 3D Procedural"), BLUE),
+        ("infra", info.get("infra", "Arch Linux · Docker · KVM/QEMU · Bash"), MUTED),
     ]
 
     ascii_logo = [
