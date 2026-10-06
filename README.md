@@ -11,7 +11,7 @@
 <table>
   <tr>
     <td valign="top"><img src="./dom-ascii.svg" width="370" alt="Dominique Contreras - ASCII portrait" /></td>
-    <td valign="top"><img src="./info-card.svg" width="490" alt="Dominique Contreras - System Info" /></td>
+    <td valign="top"><img src="./arch-card.svg" width="490" alt="Dominique Contreras - System Info" /></td>
   </tr>
 </table>
 
