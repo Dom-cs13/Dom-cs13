@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Testing
+.pytest_cache/
+
+# Local workspace files
+.agents/
+plan.md
